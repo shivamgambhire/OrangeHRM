@@ -1,21 +1,10 @@
-import {test,expect} from "@playwright/test"
-import { LoginPage } from  "../page-objects/LoginPage"
+// tests/dashboard.spec.ts
+import { test, expect } from '@playwright/test';
 
-test.describe("Login and Verify", ()=> {
-    
-    let loginpage: LoginPage
-
-    test.beforeEach(async ({page}) =>{
-        loginpage = new LoginPage(page)
-
-        await loginpage.visitAndLogin()
- })
-
-    test("Verify Login to OrangeHRM", async ({page}) =>{
-        
-        await expect(page.locator("//h6[normalize-space()='Dashboard']")).toContainText("Dashboard")
-        await expect(page.locator(".oxd-userdropdown-name")).not.toBeEmpty()
-    })
-
-   
-})
+test.describe('OrangeHRM Dashboard', () => {
+  test('Verify Dashboard after login', async ({ page }) => {
+    await page.goto('/');                                                               // baseURL is set in playwright.config.ts
+    await expect(page.locator("//h6[normalize-space()='Dashboard']")).toBeVisible();
+    await expect(page.locator('.oxd-userdropdown-name')).not.toBeEmpty();
+  });
+});
