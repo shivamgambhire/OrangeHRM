@@ -10,3 +10,10 @@ OrangeHRM/
  │    └── dashboard.spec.ts
  ├── playwright.config.ts
  ├── package.json
+
+
+Install the Node modules & Playwright dependency 
+
+- npm init
+- npm install -D @playwright/test
+- npx playwright install
