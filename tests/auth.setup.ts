@@ -5,6 +5,7 @@ import { LoginPage } from '../page-objects/LoginPage';
 async function globalSetup() {
   const browser = await chromium.launch();
   const page = await browser.newPage();
+  
   const loginPage = new LoginPage(page);
 
   await loginPage.visitAndLogin();

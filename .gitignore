@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Playwright test artifacts
+test-results/
+playwright-report/
+blob-report/
+*.zip
+*.tar.gz
+
+# Storage state / auth tokens
+*.json
+
+# Environment & config
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
